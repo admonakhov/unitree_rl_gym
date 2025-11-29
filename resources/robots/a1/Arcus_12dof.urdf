@@ -111,7 +111,7 @@
 		  effort="88"
 		  velocity="32" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -166,13 +166,9 @@
 		  link="left_hip_roll_link" />
 		<axis
 		  xyz="0.983751487188846 0 0.179535543705789" />
-		<limit
-		  lower="-0.5236"
-		  upper="2.9671"
-		  effort="88"
-		  velocity="32" />
+		<limit lower="-0.5236" upper="2.9671" effort="139" velocity="20"/>
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -233,7 +229,7 @@
 		  effort="88"
 		  velocity="32" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -294,7 +290,7 @@
 		  effort="139"
 		  velocity="20" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -355,7 +351,7 @@
 		  effort="50"
 		  velocity="37" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -440,7 +436,7 @@
 		  effort="50"
 		  velocity="37" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	
@@ -502,7 +498,7 @@
 		  effort="88"
 		  velocity="32" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -557,13 +553,9 @@
 		  link="right_hip_roll_link" />
 		<axis
 		  xyz="0.983751487188846 0 0.179535543705788" />
-		<limit
-		  lower="-2.9671"
-		  upper="0.5236"
-		  effort="88"
-		  velocity="32" />
+		<limit lower="-2.9671" upper="0.5236" effort="139" velocity="20"/>
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -624,7 +616,7 @@
 		  effort="88"
 		  velocity="32" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -685,7 +677,7 @@
 		  effort="139"
 		  velocity="20" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -746,7 +738,7 @@
 		  effort="50"
 		  velocity="37" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -831,7 +823,7 @@
 		  effort="50"
 		  velocity="37" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 
@@ -854,7 +846,7 @@
 		  effort="88"
 		  velocity="32" />
 		<dynamics
-		  damping="0.1"
+		  damping="0.001"
 		  friction="0.1" />
 	</joint>
 	<link
@@ -989,7 +981,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1050,7 +1042,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1111,7 +1103,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1172,7 +1164,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1233,7 +1225,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1294,7 +1286,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1355,7 +1347,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1416,7 +1408,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1477,7 +1469,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
   <link
@@ -1538,7 +1530,7 @@
       effort="25"
       velocity="37" />
     <dynamics
-      damping="0.1"
+      damping="0.001"
       friction="0.1" />
   </joint>
 </robot>
