@@ -2,7 +2,7 @@ from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobot
 
 class A1RoughCfg( LeggedRobotCfg ):
     class init_state( LeggedRobotCfg.init_state ):
-        pos = [0.0, 0.0, 0.8] # x,y,z [m]
+        pos = [0.0, 0.0, 0.805] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
            'left_hip_yaw_joint' : 0. ,   
            'left_hip_roll_joint' : 0,               
@@ -33,7 +33,19 @@ class A1RoughCfg( LeggedRobotCfg ):
         push_robots = True
         push_interval_s = 5
         max_push_vel_xy = 1.5
-      
+    
+    
+    class commands(LeggedRobotCfg.commands):
+        curriculum = False
+        max_curriculum = 1.
+        num_commands = 4 # default: lin_vel_x, lin_vel_y, ang_vel_yaw, heading (in heading mode ang_vel_yaw is recomputed from heading error)
+        resampling_time = 10. # time before command are changed[s]
+        heading_command = True # if true: compute ang vel command from heading error
+        class ranges(LeggedRobotCfg.commands.ranges):
+            lin_vel_x = [-1.0, 2.0] # min max [m/s]
+            lin_vel_y = [-1.0, 1.0]   # min max [m/s]
+            ang_vel_yaw = [-1, 1]    # min max [rad/s]
+            heading = [-3.14, 3.14]
 
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
@@ -67,19 +79,19 @@ class A1RoughCfg( LeggedRobotCfg ):
   
     class rewards( LeggedRobotCfg.rewards ):
         soft_dof_pos_limit = 0.9
-        base_height_target = 0.78
+        base_height_target = 0.802
         
         class scales( LeggedRobotCfg.rewards.scales ):
             tracking_lin_vel = 1.0
             tracking_ang_vel = 0.5
             lin_vel_z = -2.0
             ang_vel_xy = -0.05
-            orientation = -1.0
+            orientation = -.10
             base_height = -10.0
             dof_acc = -2.5e-7
             dof_vel = -1e-3
             feet_air_time = 0.0
-            collision = 0.0
+            collision = -20.0
             action_rate = -0.01
             dof_pos_limits = -5.0
             alive = 0.15
@@ -87,6 +99,11 @@ class A1RoughCfg( LeggedRobotCfg ):
             contact_no_vel = -0.2
             feet_swing_height = -20.0
             contact = 0.18
+
+    class sim(LeggedRobotCfg.sim):
+        class physx(LeggedRobotCfg.sim.physx):
+            num_threads = 16
+            max_gpu_contact_pairs = 2**23
 
 class A1RoughCfgPPO( LeggedRobotCfgPPO ):
     class policy:

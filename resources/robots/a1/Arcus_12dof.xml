@@ -36,7 +36,7 @@
   </asset>
 
   <worldbody>
-    <body name="pelvis" pos="0 0 0.8">
+    <body name="pelvis" pos="0 0 0.805">
       <site name="imu_in_pelvis" size="0.01" pos="0.035 0.06 0.0"/>
       <inertial pos="0.0171095 0.0646579 0.30901" quat="1 0.000253315 0.000871328 0.000135741" mass="22.5629" diaginertia="1.08229 0.796016 0.42227"/>
       <joint name="floating_base_joint" type="free" limited="false" actuatorfrclimited="false"/>
@@ -87,10 +87,10 @@
                   <inertial pos="0.0742712 0.00114689 -0.022787" quat="0.00845219 0.712853 0.00383109 0.701252" mass="0.661711" diaginertia="0.00256889 0.00234942 0.00033117"/>
                   <joint name="left_ankle_roll_joint" pos="0 0 0" axis="0.999998 -0.00192994 0" range="-0.2618 0.2618" actuatorfrcrange="-50 50" />
                   <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.752941 0.752941 0.752941 1" mesh="left_ankle_roll_link"/>
-                  <geom size="0.005" pos="-0.03 0.02 -0.03" rgba="0.752941 0.752941 0.752941 1"/>
-                  <geom size="0.005" pos="-0.03 -0.025 -0.03" rgba="0.752941 0.752941 0.752941 1"/>
-                  <geom size="0.005" pos="0.19 0.02 -0.03" rgba="0.752941 0.752941 0.752941 1"/>
-                  <geom size="0.005" pos="0.19 -0.03 -0.03" rgba="0.752941 0.752941 0.752941 1"/>
+                  <geom size="0.005" pos="-0.026 0.02 -0.04" rgba="0.752941 0.752941 0.752941 1"/>
+                  <geom size="0.005" pos="-0.026 -0.025 -0.04" rgba="0.752941 0.752941 0.752941 1"/>
+                  <geom size="0.005" pos="0.19 0.02 -0.04" rgba="0.752941 0.752941 0.752941 1"/>
+                  <geom size="0.005" pos="0.19 -0.03 -0.04" rgba="0.752941 0.752941 0.752941 1"/>
                 </body>
               </body>
             </body>
@@ -124,10 +124,10 @@
                   <inertial pos="0.074271 -0.0015944 -0.022784" quat="-0.00640701 0.712836 -0.00598253 0.701276" mass="0.66157" diaginertia="0.00256826 0.00234883 0.000331141"/>
                   <joint name="right_ankle_roll_joint" pos="0 0 0" axis="0.999991 -0.00416414 4.41061e-05" range="-0.2618 0.2618" actuatorfrcrange="-50 50" />
                   <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="right_ankle_roll_link"/>
-                  <geom size="0.005" pos="-0.03 -0.02 -0.03" rgba="0.75294 0.75294 0.75294 1"/>
-                  <geom size="0.005" pos="-0.03 0.025 -0.03" rgba="0.75294 0.75294 0.75294 1"/>
-                  <geom size="0.005" pos="0.19 -0.02 -0.03" rgba="0.75294 0.75294 0.75294 1"/>
-                  <geom size="0.005" pos="0.19 0.03 -0.03" rgba="0.75294 0.75294 0.75294 1"/>
+                  <geom size="0.005" pos="-0.026 -0.02 -0.04" rgba="0.75294 0.75294 0.75294 1"/>
+                  <geom size="0.005" pos="-0.026 0.025 -0.04" rgba="0.75294 0.75294 0.75294 1"/>
+                  <geom size="0.005" pos="0.19 -0.02 -0.04" rgba="0.75294 0.75294 0.75294 1"/>
+                  <geom size="0.005" pos="0.19 0.03 -0.04" rgba="0.75294 0.75294 0.75294 1"/>
                 </body>
               </body>
             </body>

@@ -1,11 +1,11 @@
-from legged_gym.envs.g1.g1_config import G1RoughCfg, G1RoughCfgPPO
+from legged_gym.envs.a1.a1_config import A1RoughCfg, A1RoughCfgPPO
 
 
 
-class G1_23Cfg( G1RoughCfg ):
+class G1_23Cfg( A1RoughCfg ):
 
-    class init_state( G1RoughCfg.init_state ):
-        pos = [0.0, 0.0, 0.8] # x,y,z [m]
+    class init_state( A1RoughCfg.init_state ):
+        pos = [0.0, 0.0, 0.805] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
            'left_hip_yaw_joint' : 0. ,   
            'left_hip_roll_joint' : 0,               
@@ -32,14 +32,14 @@ class G1_23Cfg( G1RoughCfg ):
            'right_wrist_roll_joint' : 0.
         }
     
-    class env(G1RoughCfg.env):
+    class env(A1RoughCfg.env):
         num_observations = 80
         num_privileged_obs = 83
         num_actions = 23
       
 
 
-    class control( G1RoughCfg.control ):
+    class control( A1RoughCfg.control ):
         # PD Drive parameters:
         control_type = 'P'
           # PD Drive parameters:
@@ -68,7 +68,7 @@ class G1_23Cfg( G1RoughCfg ):
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
 
-    class asset( G1RoughCfg.asset ):
+    class asset(A1RoughCfg.asset):
         file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/g1_description/g1_23dof_rev_1_0.urdf'
         name = "g1_23dof"
         foot_name = "ankle_roll"
@@ -77,11 +77,11 @@ class G1_23Cfg( G1RoughCfg ):
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter
         flip_visual_attachments = False
   
-    class rewards( G1RoughCfg.rewards ):
+    class rewards(A1RoughCfg.rewards):
         soft_dof_pos_limit = 1.8
         base_height_target = 1.6
         
-        class scales( G1RoughCfg.rewards.scales ):
+        class scales(A1RoughCfg.rewards.scales):
             tracking_lin_vel = 2.0
             tracking_ang_vel = 1.0
             lin_vel_z = -2.0
@@ -100,21 +100,21 @@ class G1_23Cfg( G1RoughCfg ):
             feet_swing_height = -20.0
             contact = 0.36
 
-class G1_23RoughCfgPPO( G1RoughCfgPPO ):
+class G1_23RoughCfgPPO(A1RoughCfgPPO):
     class policy:
         init_noise_std = 0.8
-        actor_hidden_dims = [128, 64]
-        critic_hidden_dims = [128, 64]
+        actor_hidden_dims = [256, 128]
+        critic_hidden_dims = [256, 128]
         activation = 'elu' # can be elu, relu, selu, crelu, lrelu, tanh, sigmoid
         # only for 'ActorCriticRecurrent':
         rnn_type = 'lstm'
         rnn_hidden_size = 128
         rnn_num_layers = 1
         
-    class algorithm(G1RoughCfgPPO.algorithm):
+    class algorithm(A1RoughCfgPPO.algorithm):
         entropy_coef = 0.01
-    class runner(G1RoughCfgPPO.runner):
+    class runner(A1RoughCfgPPO.runner):
         policy_class_name = "ActorCriticRecurrent"
         max_iterations = 10000
         run_name = ''
-        experiment_name = 'g1_23dof'
+        experiment_name = 'g1'
